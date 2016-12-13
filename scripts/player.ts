@@ -1,7 +1,9 @@
 class Player {
-  constructor(public _name?: string){}
+  constructor(public _name: string){
+
+  }
   set name(value: string){
-    if(value === undefined){
+    if(value===""  || value === undefined){
       throw new Error('name should be defined!');
     }
     this._name = value;

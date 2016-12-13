@@ -7,7 +7,7 @@ var Player = (function () {
             return this._name;
         },
         set: function (value) {
-            if (value === undefined) {
+            if (value === "" || value === undefined) {
                 throw new Error('name should be defined!');
             }
             this._name = value;

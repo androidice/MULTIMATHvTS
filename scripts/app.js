@@ -1,17 +1,18 @@
 window.addEventListener('load', function () {
     function run() {
+        var game;
+        var player;
         var startBtn = document.getElementById('startGame');
         var calcBtn = document.getElementById('calculate');
-        var player;
-        function setPlayerName() {
-            player = new Player(document.getElementById('playername').value);
-        }
         startBtn.addEventListener('click', function () {
-            setPlayerName();
-            console.log(player.name);
+            player = new Player(document.getElementById('playername').value);
+            game = new Game();
+            game.player = player;
+            game.printGame();
+            document.getElementById('playername').value = '';
         });
         calcBtn.addEventListener('click', function () {
-            alert('calculate');
+            game.calculateScore();
         });
     }
     run();
